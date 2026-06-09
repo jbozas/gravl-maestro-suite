@@ -1,0 +1,17 @@
+appId: com.liteup.getgains
+name: Gravl profile settings
+tags:
+  - regression
+  - settings
+---
+- runFlow: ../subflows/open-settings.yaml
+- assertVisible:
+    id: "settings-item-health-profile"
+- assertVisible:
+    id: "settings-item-unit-of-measurement"
+- scrollUntilVisible:
+    element:
+      id: "settings-item-log-out"
+    direction: DOWN
+- assertVisible:
+    id: "settings-item-log-out"

@@ -1,0 +1,11 @@
+appId: com.liteup.getgains
+name: Gravl gym profile create and delete
+tags:
+  - regression
+  - stateful
+  - gym-profile
+---
+- runFlow: ../subflows/create-e2e-small-gym.yaml
+- assertVisible: "Name"
+- assertVisible: "Equipment"
+- runFlow: ../subflows/delete-e2e-small-gym.yaml

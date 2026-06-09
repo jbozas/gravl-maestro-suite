@@ -1,0 +1,60 @@
+appId: com.liteup.getgains
+name: Gravl workout completion with activity cleanup
+tags:
+  - reset-account
+  - stateful
+  - workout
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn:
+    id: "home-next-workout-card"
+- tapOn:
+    id: "button-start-workout"
+- assertVisible:
+    id: "active-workout-back"
+- assertVisible:
+    id: "button-finish"
+- tapOn:
+    id: "active-workout-exercise-row-0"
+- assertVisible:
+    id: "workout-exercise-log-all-sets"
+- tapOn:
+    id: "workout-exercise-log-all-sets"
+- assertVisible: "Log all sets"
+- tapOn: "Yes"
+- assertVisible:
+    id: "button-done"
+- tapOn:
+    id: "button-done"
+- tapOn:
+    id: "button-finish"
+- assertVisible: "EXERTION RATING"
+- tapOn:
+    point: "19%,91%"
+- tapOn:
+    id: "button-finish"
+- assertVisible: "Unfinished Sets"
+- tapOn: "Finish"
+# The Save Workout screen has a live duration timer that prevents Android from
+# becoming idle. Use the stable button position and verify the destination.
+- tapOn:
+    point: "50%,58%"
+- assertVisible:
+    id: "button-done"
+- tapOn:
+    id: "button-done"
+- tapOn: "Feed"
+- assertVisible:
+    id: "community-tab-only-you"
+# The newest completed workout is the first Feed card. Its overflow button does
+# not expose a stable ID.
+- tapOn:
+    point: "92%,23%"
+- assertVisible: "Workout options"
+- tapOn: "Delete"
+- assertVisible: "Delete workout"
+- tapOn: "Delete"
+- assertNotVisible: "Delete workout"
+- tapOn: "Home"
+- assertVisible:
+    id: "home-next-workout-card"

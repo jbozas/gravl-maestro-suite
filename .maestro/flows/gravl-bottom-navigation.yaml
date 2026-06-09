@@ -1,0 +1,16 @@
+appId: com.liteup.getgains
+name: Gravl bottom navigation
+tags:
+  - smoke
+  - navigation
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn: "Feed"
+- assertVisible: "Feed"
+- tapOn: "Library"
+- assertVisible: "Library"
+- tapOn: "Profile"
+- assertVisible: "Profile"
+- tapOn: "Home"
+- assertVisible:
+    id: "home-next-workout-card"

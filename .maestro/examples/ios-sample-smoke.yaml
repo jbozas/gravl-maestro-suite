@@ -1,0 +1,5 @@
+appId: testMaestrotestMaestro.testMaestro
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Hello, world!"

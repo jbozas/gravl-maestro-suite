@@ -1,0 +1,12 @@
+appId: com.liteup.getgains
+---
+- stopApp
+- launchApp
+- waitForAnimationToEnd:
+    timeout: 30000
+- tapOn:
+    text: "Close drawer"
+    optional: true
+- tapOn: "Home"
+- assertVisible:
+    id: "home-next-workout-card"

@@ -1,0 +1,14 @@
+appId: com.liteup.getgains
+---
+# Creation and equipment editing both land on the temporary profile screen.
+- back
+- assertVisible: "Gym profiles"
+- assertVisible: "E2E Small Gym"
+# The row menu icon does not expose a stable ID. The temporary row is appended
+# after the four pre-existing account profiles, so its menu is at this position.
+- tapOn:
+    point: "77%,44%"
+- tapOn: "Delete"
+- assertVisible: "Delete gym profile"
+- tapOn: "Delete"
+- assertNotVisible: "E2E Small Gym"

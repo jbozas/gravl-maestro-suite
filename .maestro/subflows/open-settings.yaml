@@ -1,0 +1,9 @@
+appId: com.liteup.getgains
+---
+- runFlow: open-home.yaml
+- tapOn: "Profile"
+# The settings gear is visible but does not expose an accessibility selector.
+- tapOn:
+    point: "92%,10%"
+- assertVisible:
+    id: "settings-screen-content"

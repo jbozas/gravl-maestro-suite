@@ -1,0 +1,28 @@
+appId: com.liteup.getgains
+name: Gravl Library search
+tags:
+  - regression
+  - library
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn: "Library"
+- assertVisible: "Search exercises"
+- assertVisible: "Favorite Workouts"
+- assertVisible: "Gravl Splits"
+- assertVisible: "Custom Splits"
+- tapOn: "Search exercises"
+- assertVisible:
+    id: "search-modal-search"
+- assertVisible:
+    id: "search-modal-cancel"
+- assertVisible:
+    id: "search-filter-chip-muscle"
+- assertVisible:
+    id: "search-filter-chip-favorites"
+- assertVisible:
+    id: "search-filter-chip-new"
+- assertVisible:
+    id: "search-filter-chip-done"
+- tapOn:
+    id: "search-modal-cancel"
+- assertVisible: "Library"

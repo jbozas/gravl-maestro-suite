@@ -1,0 +1,17 @@
+appId: com.liteup.getgains
+name: Gravl Profile overview
+tags:
+  - regression
+  - profile
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn: "Profile"
+- assertVisible: "Your training hub"
+- assertVisible: "ACTIVITY"
+- assertVisible: "QUICK ACTIONS"
+- assertVisible: "Customer support"
+- scrollUntilVisible:
+    element:
+      text: "Measurements"
+    direction: DOWN
+- assertVisible: "Measurements"

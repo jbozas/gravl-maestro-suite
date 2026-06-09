@@ -1,0 +1,40 @@
+appId: com.liteup.getgains
+name: Gravl settings preference details
+tags:
+  - regression
+  - settings
+---
+- runFlow: ../subflows/open-settings.yaml
+- tapOn:
+    id: "settings-item-health-profile"
+- assertVisible: "Health Profile"
+- assertVisible: "Sex"
+- assertVisible: "Height"
+- assertVisible: "Weight"
+- assertVisible: "Date of birth"
+- assertVisible:
+    id: "button-done"
+- back
+- tapOn:
+    id: "settings-item-unit-of-measurement"
+- assertVisible: "Weight Unit"
+- assertVisible:
+    id: "checkbox-row-1-kilograms-kg"
+- assertVisible:
+    id: "checkbox-row-2-pounds-lb"
+- back
+- tapOn:
+    id: "settings-item-unit-of-distance"
+- assertVisible: "Distance Unit"
+- assertVisible:
+    id: "checkbox-row-1-kilometers"
+- assertVisible:
+    id: "checkbox-row-2-miles"
+- back
+- tapOn:
+    id: "settings-item-exertion-rating"
+- assertVisible: "Exertion Rating"
+- assertVisible: "Enable exertion rating"
+- back
+- assertVisible:
+    id: "settings-screen-content"

@@ -1,0 +1,21 @@
+appId: com.liteup.getgains
+---
+- runFlow: open-home.yaml
+# The selected gym header does not expose a stable ID.
+- tapOn:
+    point: "20%,9%"
+- assertVisible: "Gym profiles"
+- tapOn: "Add gym profile"
+- tapOn:
+    id: "checkbox-row-2-small-gym"
+- tapOn:
+    id: "button-skip"
+- tapOn:
+    id: "text-input-name"
+- inputText: "E2E Small Gym"
+- hideKeyboard
+- tapOn:
+    id: "button-create"
+- waitForAnimationToEnd:
+    timeout: 30000
+- assertVisible: "Equipment"

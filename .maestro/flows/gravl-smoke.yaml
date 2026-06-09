@@ -1,0 +1,10 @@
+appId: com.liteup.getgains
+name: Gravl logged-in smoke
+tags:
+  - smoke
+---
+- runFlow: ../subflows/open-home.yaml
+- assertVisible:
+    id: "home-next-workout-card"
+- assertVisible:
+    id: "home-next-workout-options"

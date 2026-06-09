@@ -1,0 +1,16 @@
+appId: com.liteup.getgains
+name: Gravl workout entry
+tags:
+  - regression
+  - workout
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn:
+    id: "home-next-workout-card"
+- assertVisible:
+    id: "button-start-workout"
+- assertVisible:
+    id: "active-workout-exercise-row-0"
+- back
+- assertVisible:
+    id: "home-next-workout-card"

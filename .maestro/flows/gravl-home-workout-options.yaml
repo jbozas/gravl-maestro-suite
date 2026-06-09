@@ -1,0 +1,17 @@
+appId: com.liteup.getgains
+name: Gravl Home workout options
+tags:
+  - regression
+  - workout
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn:
+    id: "home-next-workout-options"
+- assertVisible: "Workout options"
+- assertVisible: "Regenerate"
+- assertVisible: "Skip"
+- assertVisible: "Duration"
+- assertVisible: "Share"
+- back
+- assertVisible:
+    id: "home-next-workout-card"

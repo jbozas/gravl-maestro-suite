@@ -1,0 +1,24 @@
+appId: com.liteup.getgains
+name: Gravl workout start and cancel
+tags:
+  - regression
+  - stateful
+  - workout
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn:
+    id: "home-next-workout-card"
+- tapOn:
+    id: "button-start-workout"
+- assertVisible:
+    id: "active-workout-back"
+- assertVisible:
+    id: "button-finish"
+# The close control is visible but does not expose an accessibility selector.
+- tapOn:
+    point: "92%,9%"
+- assertVisible: "Cancel workout"
+- tapOn: "Yes"
+- assertVisible:
+    id: "home-next-workout-card"
+- assertNotVisible: "IN PROGRESS"

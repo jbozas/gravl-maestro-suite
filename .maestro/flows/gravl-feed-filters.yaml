@@ -1,0 +1,26 @@
+appId: com.liteup.getgains
+name: Gravl Feed filters
+tags:
+  - regression
+  - feed
+---
+- runFlow: ../subflows/open-home.yaml
+- tapOn: "Feed"
+- assertVisible:
+    id: "community-tab-only-you"
+- assertVisible:
+    id: "community-tab-friends"
+- tapOn:
+    id: "community-tab-friends"
+- assertVisible:
+    id: "button-get-started"
+- tapOn:
+    id: "community-tab-only-you"
+- tapOn: "Group by"
+- assertVisible: "All"
+- assertVisible: "Workouts"
+- assertVisible: "Scores"
+- assertVisible: "Badges"
+- back
+- assertVisible:
+    id: "community-tab-only-you"

@@ -1,0 +1,23 @@
+appId: com.liteup.getgains
+name: Gravl gym equipment edit
+tags:
+  - regression
+  - stateful
+  - gym-profile
+---
+- runFlow: ../subflows/create-e2e-small-gym.yaml
+- tapOn: "Equipment"
+- assertVisible:
+    id: "checkbox-row-7-ab-crunch-machine"
+- tapOn: "Edit all"
+- assertVisible:
+    id: "numeric-input-increments"
+- assertVisible:
+    id: "button-save"
+# Save the current default value to cover persistence without altering data.
+- tapOn:
+    id: "button-save"
+- assertVisible:
+    id: "checkbox-row-7-ab-crunch-machine"
+- back
+- runFlow: ../subflows/delete-e2e-small-gym.yaml

@@ -3,25 +3,25 @@
 Run every Gravl workflow:
 
 ```bash
-maestro --device emulator-5554 test .maestro
+maestro --device emulator-5556 test .maestro
 ```
 
 Run only smoke-tagged workflows:
 
 ```bash
-maestro --device emulator-5554 test .maestro --include-tags=smoke
+maestro --device emulator-5556 test .maestro --include-tags=smoke
 ```
 
 Run only workflows that create and clean up test data:
 
 ```bash
-maestro --device emulator-5554 test .maestro --include-tags=stateful
+maestro --device emulator-5556 test .maestro --include-tags=stateful
 ```
 
 Run the reset-account workout completion workflow explicitly:
 
 ```bash
-maestro --device emulator-5554 test .maestro/reset-account-flows/gravl-workout-completion.yaml
+maestro --device emulator-5556 test .maestro/reset-account-flows/gravl-workout-completion.yaml
 ```
 
 ## Structure
